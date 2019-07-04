@@ -12,7 +12,7 @@ function cup_validate()
 {
 	function check(n, cond)
 	{
-		tiles[n].classList[cond ? 'remove' : 'add']('invalid');
+		tiles[n].classList[cond ? 'add' : 'remove']('invalid');
 	}
 	function popcount(n)
 	{
@@ -45,7 +45,7 @@ function cup_validate()
 		if(q) l |= 1 << (i * 6);
 		for(var j = 0; j < 5; j++)
 		{
-			if(checked[i * 6 + j])
+			if(checked[i * 5 + j])
 			{
 				n++;
 				if(j == 2) c++;
