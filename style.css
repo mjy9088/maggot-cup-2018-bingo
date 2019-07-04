@@ -48,3 +48,24 @@ td
 	text-align: center;
 	transition: background-color 1s;
 }
+
+td:hover
+{
+	background-color: #BBFF88;
+	transition: background-color 0.5s;
+}
+
+td.checked
+{
+	background-color: #BBBBFF;
+}
+
+td.invalid
+{
+	background-color: #FFBB88;
+}
+
+td.checked.invalid
+{
+	background-color: #FFBBBB;
+}
