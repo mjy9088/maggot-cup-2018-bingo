@@ -1,0 +1,49 @@
+@charset "utf-8";
+html, body
+{
+	background-color: #888888;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+body
+{
+	display: table;
+}
+
+section
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+table
+{
+	margin: 0px auto;
+	border-spacing: 2vmin;
+	border-collapse: separate;
+}
+
+table
+{
+	margin: 0px auto;
+	border-spacing: 2vmin;
+	border-collapse: separate;
+}
+
+td
+{
+	width: 15vmin;
+	height: 15vmin;
+	border-spacing: 2.5vmin;
+	background-color: #BBFFBB;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 0px;
+	font-size: 18vmin;
+	text-align: center;
+	transition: background-color 1s;
+}
