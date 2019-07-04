@@ -95,4 +95,5 @@ window.addEventListener("load", function (e)
 	{
 		(tiles[i] = tmp[i]).addEventListener('click', getFunction(i));
 	}
+	cup_validate();
 });
