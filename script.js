@@ -12,7 +12,7 @@ function cup_validate()
 {
 	function check(n, cond)
 	{
-		tiles[n].classList[cond ? 'add' : 'remove']('invalid');
+		tiles[n].classList[(checked[n] && cond) ? 'add' : 'remove']('invalid');
 	}
 	function popcount(n)
 	{
