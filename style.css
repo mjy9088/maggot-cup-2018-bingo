@@ -72,3 +72,8 @@ td.invalid
 {
 	outline-color: #FF0000;
 }
+
+td.idk
+{
+	outline-color: #888888;
+}
