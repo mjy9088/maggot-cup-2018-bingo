@@ -31,37 +31,44 @@ table
 table
 {
 	margin: 0px auto;
-	border-spacing: 4vmin;
+	border-spacing: 3vmin;
 	border-collapse: separate;
 }
 
 td
 {
-	width: 15vmin;
-	height: 15vmin;
-	outline: 1vmin solid #BBFFBB;
-	background-color: #BBFFBB;
+	width: 14vmin;
+	height: 14vmin;
+	border: 1vmin solid #FFFFFF;
+	outline: 1vmin solid #FFFFFF;
+	background-color: #FFFFFF;
 	vertical-align: middle;
 	margin: 0px;
 	padding: 0px;
 	font-size: 2.5vmin;
-	color: #668866;
+	color: #000000;
 	text-align: center;
-	transition: background-color 1s;
 }
 
 td:hover
 {
-	background-color: #BBFF88;
-	transition: background-color 0.5s;
+	background-color: #FFFF88;
 }
 
 td.checked
 {
-	background-color: #BBBBFF;
+	color: #FFFFFF;
+	background-color: #000000;
+	border-color: #000000;
+	outline-color: #000000;
+}
+
+td.checked:hover
+{
+	color: #FFFF88;
 }
 
 td.invalid
 {
-	outline-color: #FF8888;
+	outline-color: #FF0000;
 }
