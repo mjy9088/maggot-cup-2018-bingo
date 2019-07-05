@@ -2,7 +2,7 @@
 
 html, body
 {
-	background-color: #888888;
+	background-color: #444444;
 	margin: 0px;
 	padding: 0px;
 	border: none;
@@ -52,7 +52,7 @@ td
 
 td:hover
 {
-	background-color: #FFFF88;
+	background-color: #FFFFBB;
 }
 
 td.checked
@@ -65,7 +65,7 @@ td.checked
 
 td.checked:hover
 {
-	color: #FFFF88;
+	color: #FFFFBB;
 }
 
 td.invalid
