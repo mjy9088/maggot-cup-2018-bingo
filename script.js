@@ -12,7 +12,7 @@ function cup_validate()
 {
 	function check(n, cond)
 	{
-		tiles[n].classList[(checked[n] && cond) ? 'add' : 'remove']('invalid');
+		tiles[n].classList[(!checked[n] == !cond) ? 'add' : 'remove']('invalid');
 	}
 	function popcount(n)
 	{
@@ -34,9 +34,9 @@ function cup_validate()
 		checked[3] && checked[8] && checked[13] && checked[18] && checked[23],
 		checked[4] && checked[9] && checked[14] && checked[19] && checked[24]
 	];
-	var s = checked[20] && checked[16] && checked[12] && checked[8] && checked[4];
-	var q = checked[0] && checked[6] && checked[12] && checked[18] && checked[24];
-	var hn = 0, vn = 0, c = 0, n = 0, l = 0;
+	var s = checked[20] && checked[16] && checked[12] && checked[8] && checked[4] ? 1 : 0;
+	var q = checked[0] && checked[6] && checked[12] && checked[18] && checked[24] ? 1 : 0;
+	var hn = 0, vn = 0, c = 0, n = 0, l = 0, t = 0;
 	for(var i = 0; i < 5; i++)
 	{
 		if(h[i]) hn++;
@@ -47,6 +47,7 @@ function cup_validate()
 		{
 			if(checked[i * 5 + j])
 			{
+				t |= 1 << (i * 5 + j)
 				n++;
 				if(j == 2) c++;
 			}
@@ -61,10 +62,10 @@ function cup_validate()
 	check(5, checked[15]);
 	check(6, (!hn || !vn || (!s && !q)));
 	check(7, !checked[7]);
-	check(8, popcount(i) > 17);
+	check(8, popcount(t) > 17);
 	check(9, popcount(l) % 2);
 	check(10, !(h[2] || v[0]));
-	check(11, popcount(i & ~l & 33554431) < 5);
+	check(11, popcount(t & ~l & 33554431) < 5);
 	check(12, !(s || q || h[2] || v[2]));
 	check(13, vn < 2);
 	check(14, popcount(~l & 33554431) < 10);
@@ -78,6 +79,7 @@ function cup_validate()
 	check(22, !checked[22]);
 	check(23, (hn + vn + s + q) < 3);
 	check(24, !checked[20]);
+	console.log(hn + vn + s + q);
 }
 
 window.addEventListener("load", function (e)
