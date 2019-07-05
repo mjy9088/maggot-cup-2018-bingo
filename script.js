@@ -45,23 +45,20 @@ function cup_validate()
 		{
 			if(checked[i * 5 + j])
 			{
-				n++;
-				if(j == 2)
+				if(h[i] || v[j] || s && i + j == 4 || q && i == j)
 				{
-					c++;
+					l++;
 				}
-			}
-			if(h[i] || v[j] || s && i + j == 4 || q && i == j)
-			{
-				l++;
-				if(checked[i * 5 + j])
+				else
 				{
 					t++;
 				}
-				tiles[i * 5 + j].style.background = checked[i * 5 + j] ? "blue" : "";
+				n++;
 			}
-			else
-				tiles[i * 5 + j].style.background = "";
+		}
+		if(checked[i * 5 + 2])
+		{
+			c++;
 		}
 	}
 	check(0, s);
@@ -75,7 +72,7 @@ function cup_validate()
 	check(8, n > 17);
 	check(9, l % 2);
 	check(10, !(h[2] || v[0]));
-	check(11, l - t < 5);
+	check(11, t < 5);
 	check(12, !(s || q || h[2] || v[2]));
 	check(13, vn < 2);
 	check(14, 25 - l < 10);
