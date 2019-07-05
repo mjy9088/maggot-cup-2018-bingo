@@ -14,12 +14,6 @@ function cup_validate()
 	{
 		tiles[n].classList[(!checked[n] == !cond) ? 'add' : 'remove']('invalid');
 	}
-	function popcount(n)
-	{
-		var tmp = n - ((n >> 1) & 033333333333)
-					- ((n >> 2) & 011111111111);
-		return ((tmp + (tmp >> 3)) & 030707070707) % 63;
-	}
 	var h = [
 		checked[0] && checked[1] && checked[2] && checked[3] && checked[4],
 		checked[5] && checked[6] && checked[7] && checked[8] && checked[9],
