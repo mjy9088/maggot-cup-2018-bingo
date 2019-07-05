@@ -41,7 +41,7 @@ function cup_validate()
 	{
 		if(h[i]) hn++;
 		if(v[i]) vn++;
-		if(s) l |= 1 << (20 - i * 5 + i);
+		if(s) l |= 1 << (20 - i * 4);
 		if(q) l |= 1 << (i * 6);
 		for(var j = 0; j < 5; j++)
 		{
@@ -79,7 +79,6 @@ function cup_validate()
 	check(22, !checked[22]);
 	check(23, (hn + vn + s + q) < 3);
 	check(24, !checked[20]);
-	console.log(hn + vn + s + q);
 }
 
 window.addEventListener("load", function (e)
