@@ -62,10 +62,5 @@ td.checked
 
 td.invalid
 {
-	background-color: #FFBB88;
-}
-
-td.checked.invalid
-{
-	background-color: #FFBBBB;
+	outline-color: #FF8888;
 }
