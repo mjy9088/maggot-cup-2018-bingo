@@ -22,12 +22,6 @@
 
 
 
-### Setting
-
-아이폰에서 하려면 적당히 파일 하나로 합쳐주세요.
-
-
-
 ## Deployment
 
 `index.html`과 `style.css`, `script.js`가 모두 같은 폴더에 있어야 합니다.
