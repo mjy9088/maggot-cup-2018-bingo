@@ -76,7 +76,7 @@ function cup_validate()
 	check(18, !checked[3]);
 	check(19, !s && !q);
 	check(20, !checked[24]);
-	check(21, 1);
+	check(21, true);
 	check(22, !checked[22]);
 	check(23, (hn + vn + s + q) < 3);
 	check(24, !checked[20]);
