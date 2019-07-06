@@ -67,7 +67,7 @@ function cup_validate()
 	check(9, l % 2);
 	check(10, !(h[2] || v[0]));
 	check(11, t < 5);
-	check(12, !(s || q || h[2] || v[2]));
+	check(12, checked[12] && !(s || q || h[2] || v[2]));
 	check(13, vn < 2);
 	check(14, 25 - l < 10);
 	check(15, checked[5]);
