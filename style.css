@@ -56,7 +56,7 @@ label:hover
 	background-color: #FFFFBB;
 }
 
-:checked + label.checked
+:checked + label
 {
 	color: #FFFFFF;
 	background-color: #000000;

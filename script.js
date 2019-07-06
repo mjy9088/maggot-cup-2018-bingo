@@ -2,14 +2,14 @@ var container;
 var tiles = Array(25);
 var checked = Array(25);
 
-function cup_onToggle(n)
-{
-	tiles[n].classList[(checked[n] = !checked[n]) ? 'add' : 'remove']('checked');
-	cup_validate();
-}
+var ids = 'A1,A2,A3,A4,A5,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5'.split(',');
 
 function cup_validate()
 {
+	for(var i = 0; i < 25; i++)
+	{
+		checked[i] = document.querySelector('#' + ids[i] + ':checked') ? true : false;
+	}
 	function check(n, cond)
 	{
 		tiles[n].classList[(!checked[n] == !cond) ? 'add' : 'remove']('invalid');
@@ -84,18 +84,15 @@ function cup_validate()
 
 window.addEventListener("load", function (e)
 {
-	function getFunction(n)
+	function listener()
 	{
-		return function ()
-		{
-			cup_onToggle(n);
-		}
+		setTimeout(cup_validate, 100);
 	}
 	container = document.getElementsByTagName('section')[0];
 	var tmp = container.querySelectorAll('label');
 	for(var i = 0; i < 25; i++)
 	{
-		(tiles[i] = tmp[i]).addEventListener('click', getFunction(i));
+		(tiles[i] = tmp[i]).addEventListener('click', listener);
 	}
 	cup_validate();
 });
