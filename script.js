@@ -10,10 +10,6 @@ function cup_validate()
 	{
 		checked[i] = document.querySelector('#' + ids[i] + ':checked') ? true : false;
 	}
-	function check(n, cond)
-	{
-		tiles[n].classList[(!checked[n] == !cond) ? 'add' : 'remove']('invalid');
-	}
 	var h = [
 		checked[0] && checked[1] && checked[2] && checked[3] && checked[4],
 		checked[5] && checked[6] && checked[7] && checked[8] && checked[9],
@@ -55,31 +51,37 @@ function cup_validate()
 			c++;
 		}
 	}
-	check(0, s);
-	check(1, (h[0] || v[1]));
-	check(2, !q);
-	check(3, !checked[18]);
-	check(4, !(h[0] || v[4] || s));
-	check(5, checked[15]);
-	check(6, (!hn || !vn || (!s && !q)));
-	check(7, !checked[7]);
-	check(8, n > 17);
-	check(9, l % 2);
-	check(10, !(h[2] || v[0]));
-	check(11, t < 5);
-	check(12, checked[12] && !(s || q || h[2] || v[2]));
-	check(13, vn < 2);
-	check(14, 25 - l < 10);
-	check(15, checked[5]);
-	check(16, !(h[1] || v[3]));
-	check(17, c > 3);
-	check(18, !checked[3]);
-	check(19, !s && !q);
-	check(20, !checked[24]);
-	check(21, true);
-	check(22, !checked[22]);
-	check(23, (hn + vn + s + q) < 3);
-	check(24, !checked[20]);
+	var cond = [
+		s,
+		h[0] || v[1],
+		!q,
+		!checked[18],
+		!(h[0] || v[4] || s),
+		checked[15],
+		(!hn || !vn || (!s && !q)),
+		!checked[7],
+		n > 17,
+		l % 2,
+		!(h[2] || v[0]),
+		t < 5,
+		checked[12] && !(s || q || h[2] || v[2]),
+		vn < 2,
+		25 - l < 10,
+		checked[5],
+		!(h[1] || v[3]),
+		c > 3,
+		!checked[3],
+		!s && !q,
+		!checked[24],
+		true,
+		!checked[22],
+		hn + vn + s + q < 3,
+		!checked[20]
+	];
+	for(var i = 0; i < 25; i++)
+	{
+		tiles[i].classList[(!checked[i] == !cond[i]) ? 'add' : 'remove']('invalid');
+	}
 }
 
 window.addEventListener("load", function (e)
