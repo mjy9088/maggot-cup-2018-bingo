@@ -91,8 +91,8 @@ window.addEventListener("load", function (e)
 			cup_onToggle(n);
 		}
 	}
-	container = document.getElementsByTagName('TABLE')[0];
-	var tmp = container.querySelectorAll('td');
+	container = document.getElementsByTagName('section')[0];
+	var tmp = container.querySelectorAll('label');
 	for(var i = 0; i < 25; i++)
 	{
 		(tiles[i] = tmp[i]).addEventListener('click', getFunction(i));

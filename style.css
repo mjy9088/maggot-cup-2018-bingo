@@ -1,7 +1,8 @@
 @charset "utf-8";
 
-html, body
+html
 {
+	display: table;
 	background-color: #444444;
 	margin: 0px;
 	padding: 0px;
@@ -12,31 +13,31 @@ html, body
 
 body
 {
-	display: table;
-}
-
-section
-{
 	display: table-cell;
 	vertical-align: middle;
 }
 
-table
+section
 {
-	margin: 0px auto;
-	border-spacing: 2vmin;
-	border-collapse: separate;
-}
-
-table
-{
+	display: table;
 	margin: 0px auto;
 	border-spacing: 3vmin;
 	border-collapse: separate;
 }
 
-td
+section article
 {
+	display: table-row;
+}
+
+input
+{
+	display: none;
+}
+
+label
+{
+	display: table-cell;
 	width: 14vmin;
 	height: 14vmin;
 	border: 1vmin solid #FFFFFF;
@@ -50,12 +51,12 @@ td
 	text-align: center;
 }
 
-td:hover
+label:hover
 {
 	background-color: #FFFFBB;
 }
 
-td.checked
+label.checked
 {
 	color: #FFFFFF;
 	background-color: #000000;
@@ -63,17 +64,17 @@ td.checked
 	outline-color: #000000;
 }
 
-td.checked:hover
+label.checked:hover
 {
 	color: #FFFFBB;
 }
 
-td.invalid
+label.invalid
 {
 	outline-color: #FF0000;
 }
 
-td.idk
+label.idk
 {
 	outline-color: #888888;
 }
