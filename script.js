@@ -1,4 +1,3 @@
-var container;
 var tiles = Array(25);
 var checked = Array(25);
 
@@ -90,8 +89,7 @@ window.addEventListener("load", function (e)
 	{
 		setTimeout(cup_validate, 100);
 	}
-	container = document.getElementsByTagName('section')[0];
-	var tmp = container.querySelectorAll('label');
+	var tmp = document.querySelectorAll('label');
 	for(var i = 0; i < 25; i++)
 	{
 		(tiles[i] = tmp[i]).addEventListener('click', listener);
